@@ -97,7 +97,7 @@ MPC stabilizes frequency faster, with less overshoot and better damping.
 
 Full technical report available at:
 
-📄 `/docs/Smart_Grid_EN.pdf`
+[Smart_Grid_EN.pdf](docs/Smart_Grid_EN.pdf)
 
 ---
 
