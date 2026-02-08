@@ -12,24 +12,24 @@ Modern microgrids face challenges due to:
 
 - High renewable penetration  
 - Reduced rotational inertia  
-- Fast load/PV fluctuations  
+- Fast load and PV fluctuations  
 - Limited generator flexibility  
 
-To address this, a predictive and constraint-aware battery controller is applied to maintain grid frequency near **50 Hz**.
+This project applies MPC to maintain grid frequency near **50 Hz**, respecting constraints and anticipating disturbances.
 
 ---
 
 # 🧩 Microgrid Architecture
 
-The simulated microgrid includes:
+The simulated microgrid consists of:
 
 - Synchronous Generator (droop baseline)  
 - Battery Energy Storage System (BESS)  
-- Photovoltaic array (PV)  
+- PV Generation  
 - Variable Load  
 - Centralized MPC Controller  
 
-![Microgrid Diagram](figures/sistema.png)
+![Microgrid Diagram](figures/sistema%20(1).png)
 
 ---
 
@@ -41,13 +41,11 @@ $$
 2H' \frac{d(\Delta f)}{dt} = P_{bat} - (P_{load} - P_{PV})
 $$
 
-### State-Space Form
+### State-Space Model
 
 $$
 \dot{x} = Ax + Bu, \qquad y = x
 $$
-
-Where:
 
 **State**
 
@@ -79,9 +77,9 @@ $$
 - **Controller Weights:**  
   - Output tracking: 100  
   - Input effort: 0.1  
-  - Rate of change: 1   
+  - Rate of change: 1  
 
-![MPC Block](figures/mpcBloco.png)
+![MPC Block](figures/mpcBloco%20(1).png)
 
 ---
 
@@ -89,17 +87,15 @@ $$
 
 ## 🔵 Frequency Response — Droop vs MPC
 
-MPC stabilizes frequency faster, with lower overshoot and improved damping.
+MPC stabilizes frequency faster, with less overshoot and better damping.
 
 | Droop Control | MPC Control |
 |--------------|-------------|
-| ![Droop](figures/result_droop.png) | ![MPC](figures/result_mpc.png) |
-
----
+| ![Droop](figures/result%20droop%20(1).png) | ![MPC](figures/result%20mpc%20(1).png) |
 
 # 📘 Documentation
 
-Full technical report available in:
+Full technical report available at:
 
 📄 `/docs/Smart_Grid_EN.pdf`
 
@@ -110,6 +106,7 @@ Full technical report available in:
 **Ioglas Alves da Fonseca**  
 **Bruno Nascimento Brasilino de Freitas**  
 École Centrale de Lille — Smart Grid Project
+
 
 
 
